@@ -5,7 +5,7 @@ const router = Router();
 const axios = require('axios').default;
 const { Genre } = require('../db');
 
-//TODO -----> GET a "/genres" <--------
+//! GET a "/genres" 
 
 router.get('/', async (req, res) => {
     try {

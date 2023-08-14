@@ -1,0 +1,12 @@
+.searchInput input {
+    font-size: 13px;
+    padding: 8px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    
+  }

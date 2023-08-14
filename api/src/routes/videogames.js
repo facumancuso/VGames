@@ -32,13 +32,13 @@ router.get('/', async (req, res) => {
             //filtro SOLO la data que necesito para enviarle al front
             const gamesREADY = response.data.results.map(game => {
                 return{
-                    id: game.id,
-                    name: game.name,
-                    background_image: game.background_image,
-                    rating: game.rating,
-                    genres: game.genres.map(g => g.name)
+                  id: game.id,
+                  name: game.name,
+                  background_image: game.background_image,
+                  rating: game.rating,
+                  genres: game.genres.map(g => g.name ? g.name : 'Unknown Genre')
                 }
-            });
+              });
 
             //como antes me traje TODOS de la base de datos, si entro por queries, solo filtro los que coincidan con la busqueda
             const filteredGamesDb = videogamesDb.filter(g => g.name.toLowerCase().includes(req.query.name.toLowerCase()));

@@ -65,18 +65,20 @@ router.get("/:idVideogame", async (req, res) => {
 //TODO  ------> POST /videogame <-------
 
 router.post("/", async (req, res) => {
-  let { name, description, releaseDate, rating, genres, platforms } = req.body;
+  console.log(req.body); 
+
+  let { name, description, releaseDate, rating, genres, platforms, background_image } = req.body;
+  
   if (!platforms) {
-    return res
-      .status(400)
-      .json({ error: "Platforms property is missing in the req.body." });
+    return res.status(400).json({ error: "Platforms property is missing in the req.body." });
   }
+  
   if (!Array.isArray(platforms)) {
-    return res
-      .status(400)
-      .json({ error: "Platforms property should be an array." });
+    return res.status(400).json({ error: "Platforms property should be an array." });
   }
+  
   platforms = platforms.join(", ");
+  
   try {
     const gameCreated = await Videogame.findOrCreate({
       where: {
@@ -85,20 +87,28 @@ router.post("/", async (req, res) => {
         releaseDate,
         rating,
         platforms,
+        background_image
       },
     });
 
-    const genreNames = genres; // Assuming genres is an array of genre names
-    const associatedGenres = await Genre.findAll({
-      where: { name: genreNames },
-    });
-
+    const genreNames = genres;
+    const associatedGenres = [];
+  
+    for (let i = 0; i < genreNames.length; i++) {
+      const [genre, created] = await Genre.findOrCreate({
+        where: { name: genreNames[i] },
+      });
+      associatedGenres.push(genre);
+    }
+  
     const genreIds = associatedGenres.map((genre) => genre.id);
     await gameCreated[0].setGenres(genreIds);
   } catch (err) {
     console.log(err);
-    return res.status(500).json({ error: "Internal server error." });
+    return res.status(500).json({ error: err.message });
   }
+  
   res.send("Created game successfully.");
 });
+
 module.exports = router;

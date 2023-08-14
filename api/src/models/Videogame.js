@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     platforms: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     }, 
     releaseDate: {
@@ -27,6 +27,10 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
+    },
+    background_image: {
+      type: DataTypes.STRING,
+      allowNull: true, // change this to 'false' if an image is always required
     },
   }, {timestamps: true,
       createdAt: 'creado',

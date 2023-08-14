@@ -1,10 +1,18 @@
-import './App.css';
+import React from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import HomePage from './components/HomePage';
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Videogames</h1>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/home" component={HomePage} />
+      </Router>
+    </Provider>
   );
 }
 
