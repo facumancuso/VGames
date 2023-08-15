@@ -14,7 +14,6 @@ function Pagination({ currentPage, totalPages, paginate }) {
     }
   };
 
-  // Determine the range of page numbers to display (max 3)
   let start = Math.max(currentPage - 1, 1);
   let end = Math.min(start + 2, totalPages);
   if (end - start < 2) {

@@ -3,7 +3,7 @@
   max-width: 100px;
   height: 100px ;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-left: 70px;
 }
 .container {
@@ -22,5 +22,5 @@
 .container p {
   display: flex;
   margin-bottom: 5px; 
-  margin-left: auto;
+  margin-left: 0;
 }

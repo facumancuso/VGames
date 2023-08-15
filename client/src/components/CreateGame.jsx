@@ -3,6 +3,7 @@ import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import ImgCVG from "../assets/Joystick.png";
 import styles from "./styles/CreateGame.module.css";
+import { validateName, validateRating } from "./validations";
 
 const acceptedGenres = [
   "Action",
@@ -24,7 +25,6 @@ const acceptedGenres = [
   "Board Games",
   "Educational",
   "Card",
-
 ];
 const acceptedPlatforms = [
   "PC",
@@ -48,7 +48,7 @@ function CreateGame() {
     releaseDate: "",
   });
 
-  // const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleInputChange = (event) => {
@@ -69,21 +69,16 @@ function CreateGame() {
     });
   };
 
-  
-
   const validateForm = () => {
     let newErrors = {};
-    // Name is required
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-    // Description is required
-    if (!formData.description.trim()) {
-      newErrors.description = "Description is required";
-    }
-    // setErrors(newErrors);
+
+    newErrors.name = validateName(formData.name);
+    newErrors.rating = validateRating(formData.rating);
+
+    setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
 
   const createGame = async () => {
     if (validateForm()) {
@@ -105,7 +100,6 @@ function CreateGame() {
 
         setSuccessMessage("Game created successfully!");
 
-        // Clear success message after 5 seconds
         setTimeout(() => {
           setSuccessMessage("");
         }, 5000);
@@ -124,12 +118,21 @@ function CreateGame() {
         <div className={styles.leftColumn}>
           <label className={styles.label}>
             Name:
-            <input type="text" name="name" className={styles.input} onChange={handleInputChange}/>
+            <input
+              type="text"
+              name="name"
+              className={styles.input}
+              onChange={handleInputChange}
+            />
           </label>
 
           <label className={styles.label}>
             Description:
-            <input type="text" name="description" onChange={handleInputChange}/>
+            <input
+              type="text"
+              name="description"
+              onChange={handleInputChange}
+            />
           </label>
 
           <label className={styles.label}>
@@ -139,12 +142,20 @@ function CreateGame() {
 
           <label className={styles.label}>
             Image:
-            <input type="text" name="background_image" onChange={handleInputChange} />
+            <input
+              type="text"
+              name="background_image"
+              onChange={handleInputChange}
+            />
           </label>
 
           <label className={styles.label}>
             Release Date:
-            <input type="date" name="releaseDate" onChange={handleInputChange}/>
+            <input
+              type="date"
+              name="releaseDate"
+              onChange={handleInputChange}
+            />
           </label>
         </div>
 
@@ -154,8 +165,13 @@ function CreateGame() {
             <div className={styles.checkboxContainer}>
               {acceptedPlatforms.map((platform) => (
                 <div key={platform}>
-                  <input type="checkbox" name="platforms" value={platform.toLowerCase()} onChange={handleInputChange} />
-                  {" "} {platform}
+                  <input
+                    type="checkbox"
+                    name="platforms"
+                    value={platform.toLowerCase()}
+                    onChange={handleInputChange}
+                  />{" "}
+                  {platform}
                 </div>
               ))}
             </div>
@@ -168,8 +184,13 @@ function CreateGame() {
             <div className={styles.checkboxContainer}>
               {acceptedGenres.map((genre) => (
                 <div key={genre}>
-                <input type="checkbox" name="genres" value={genre} onChange={handleInputChange}/>
-                  {" "} {genre}
+                  <input
+                    type="checkbox"
+                    name="genres"
+                    value={genre}
+                    onChange={handleInputChange}
+                  />{" "}
+                  {genre}
                 </div>
               ))}
             </div>

@@ -5,7 +5,7 @@ const router = Router();
 const axios = require("axios").default;
 const { Videogame, Genre } = require("../db");
 
-//TODO  ------> GET /videogame/:idVideoGame <-------
+//TODO   GET /videogame/:idVideoGame 
 
 // consulto el detalle del juego por el ID
 router.get("/:idVideogame", async (req, res) => {
@@ -62,7 +62,7 @@ router.get("/:idVideogame", async (req, res) => {
   }
 });
 
-//TODO  ------> POST /videogame <-------
+//TODO  POST /videogame
 
 router.post("/", async (req, res) => {
   console.log(req.body); 

@@ -58,11 +58,12 @@
 
 .label {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 
 input[type="text"] {
+  display: block;
   padding: 1px;
   margin: 1px 0;
   border: 1px solid #1e52d7;
@@ -72,6 +73,7 @@ input[type="text"] {
 
 input[type="number"],
 input[type="file"] {
+  /* display: block; */
   padding: 1px;
   margin: 1px 0;
   border: 1px solid #1e52d7;

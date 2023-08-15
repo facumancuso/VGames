@@ -6,7 +6,7 @@ const axios = require('axios').default;
 const { Videogame, Genre } = require('../db');
 
 
-//TODO -----> GET a "/videogames" <--------
+//TODO  GET a "/videogames" 
 
 router.get('/', async (req, res) => {
     //busco en la DB si tengo juegos creados y me traigo todos
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
         genres: el.genres.map(g => g.name)
     }), [])
     
-    //TODO QUERIES --------> GET /videogames?name="..." <-----------
+    //TODO QUERIES  GET /videogames?name="..." 
     // si llegan queries "name" lo agarro por aca
     if (req.query.name) {
         try {

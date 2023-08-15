@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 import styles from "./styles/Taskbar.module.css";
 import startButtonImage from "../assets/start-button.png";
 import Google from "../assets/google.png";
-import HomeIcon from "../assets/apagado.png";
-import AboutMe from "../assets/imgabout.png";
+import HomeIcon from "../assets/Power.png";
+import AboutMe from "../assets/Whistler - Help and Support.png";
 import Clock from "./elements/Clock";
 import StartMenu from "./StartMenu";
 import About from "./About";
@@ -28,7 +28,7 @@ const Taskbar = ({ onStartButtonClick, onGamesButtonClick }) => {
   };
 
   const handleAboutMeClick = () => {
-    setIsAboutOpen(!isAboutOpen); // Toggle the value of isAboutOpen
+    setIsAboutOpen(!isAboutOpen); 
   };
 
   return (
@@ -57,7 +57,7 @@ const Taskbar = ({ onStartButtonClick, onGamesButtonClick }) => {
 
       {isAboutOpen && <About onClose={() => setIsAboutOpen(false)} />}
 
-      <Clock className={styles.clock} />
+      {/* <Clock className={styles.clock} /> */}
       <span className={styles.homeButton} onClick={handleHomeButtonClick}>
         <img
           src={HomeIcon}

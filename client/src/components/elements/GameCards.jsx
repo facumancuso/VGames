@@ -7,10 +7,10 @@ function GameCards({ games, onGameSelect }) {
   const [currentPage, setCurrentPage] = useState(1);
   const gamesPerPage = 15;
 
-  // Initialize the 'games' state with an empty array
+  // Inicializamos el estado de los juegos con un array vacio
   const [currentGames, setCurrentGames] = useState([]);
 
-  // Check if the 'games' prop is available before updating the state
+  // Comprueba el juego antes de actualizar el estado
   useEffect(() => {
     if (games) {
       setCurrentGames(games);
@@ -18,15 +18,15 @@ function GameCards({ games, onGameSelect }) {
   }, [games]);
   
 
-  // Calculating the number of total pages
+  // Calcular lal cantidad total de paginas
   const totalPages = Math.ceil(currentGames.length / gamesPerPage);
 
-  // Calculating the games to be shown on the current page
+  // Calcular los juegos que se mostraran en la pagina
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const displayedGames = currentGames.slice(indexOfFirstGame, indexOfLastGame);
 
-  // Function to change the page
+  // Fn para cambiar de pagina
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const [selectedGame, setSelectedGame] = useState(null);

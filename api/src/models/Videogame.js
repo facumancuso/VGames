@@ -3,7 +3,6 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo para VIDEOGAME
-  // modelName / attributes / options
   sequelize.define('videogame', {
     name: {
       type: DataTypes.STRING,
@@ -30,7 +29,7 @@ module.exports = (sequelize) => {
     },
     background_image: {
       type: DataTypes.STRING,
-      allowNull: true, // change this to 'false' if an image is always required
+      allowNull: true, 
     },
   }, {timestamps: true,
       createdAt: 'creado',
