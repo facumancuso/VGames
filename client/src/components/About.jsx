@@ -3,14 +3,21 @@ import styles from './styles/About.module.css';
 
 const AboutMe = () => {
   return (
-    <div className={styles.content}>
-      <h2>About Me</h2>
-      <p>
-        ¡Hola! Soy Facu, y me encanta el fútbol.
-      </p>
-      <p>
-        Somos campeones del mundo.
-      </p>
+    <div className={`${styles.content} console-container`}>
+      <div className={styles.titleBar}>
+        <h2>Facundo Mancuso</h2>
+      </div>
+      <pre className="console-text">
+        <p>
+          ¡Hola! Estoy haciendo la app de videogames.
+        </p>
+        <p>
+          Me estoy volviendo loco..
+        </p>
+        <p>
+          Pero me consuela que somos campeones del mundo.
+        </p>
+      </pre>
     </div>
   );
 }

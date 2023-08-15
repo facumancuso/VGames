@@ -4,7 +4,7 @@ import styles from "./styles/Taskbar.module.css";
 import startButtonImage from "../assets/start-button.png";
 import Google from "../assets/google.png";
 import HomeIcon from "../assets/Power.png";
-import AboutMe from "../assets/Whistler - Help and Support.png";
+import AboutMe from "../assets/Command Prompt.png";
 import Clock from "./elements/Clock";
 import StartMenu from "./StartMenu";
 import About from "./About";

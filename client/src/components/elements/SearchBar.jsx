@@ -83,7 +83,6 @@ function SearchBar({ open, onClose, onSearch, onGameSelect }) {
 
   const handleSearch = async () => {
     try {
-      // Fetch games from the API based on the search query
       const apiGamesResponse = await axios.get(
         `${BASE_URL}/videogames?name=${value}`
       );
@@ -95,7 +94,6 @@ function SearchBar({ open, onClose, onSearch, onGameSelect }) {
 
   const handleAllGames = async () => {
     try {
-      // Fetch all games from the API
       const apiGamesResponse = await axios.get(`${BASE_URL}/videogames`);
       dispatch({ type: "GET_VIDEOGAMES", payload: apiGamesResponse.data });
     } catch (error) {
