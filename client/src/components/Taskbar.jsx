@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./styles/Taskbar.module.css";
-import StartMenu from "./StartMenu";
 import startButtonImage from "../assets/start-button.png";
 import Google from "../assets/google.png";
 import HomeIcon from "../assets/apagado.png";
+import AboutMe from "../assets/imgabout.png";
 import Clock from "./elements/Clock";
+import StartMenu from "./StartMenu";
+import About from "./About";
+
 const Taskbar = ({ onStartButtonClick, onGamesButtonClick }) => {
   const history = useHistory();
   const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const handleStartButtonClick = () => {
     setIsStartMenuOpen(!isStartMenuOpen);
@@ -18,8 +22,13 @@ const Taskbar = ({ onStartButtonClick, onGamesButtonClick }) => {
   const handleGamesButtonClick = () => {
     onGamesButtonClick();
   };
+
   const handleHomeButtonClick = () => {
-    history.push("/"); // Cambia esto por la ruta de tu página de inicio
+    history.push("/");
+  };
+
+  const handleAboutMeClick = () => {
+    setIsAboutOpen(!isAboutOpen); // Toggle the value of isAboutOpen
   };
 
   return (
@@ -42,7 +51,13 @@ const Taskbar = ({ onStartButtonClick, onGamesButtonClick }) => {
         <img src={Google} alt="Google" className={styles.gamesButton} />
       </span>
 
-      <Clock className={styles.clock} />   
+      <span className={styles.gamesButton2} onClick={handleAboutMeClick}>
+        <img src={AboutMe} alt="AboutMe" className={styles.gamesButton2} />
+      </span>
+
+      {isAboutOpen && <About onClose={() => setIsAboutOpen(false)} />}
+
+      <Clock className={styles.clock} />
       <span className={styles.homeButton} onClick={handleHomeButtonClick}>
         <img
           src={HomeIcon}

@@ -8,7 +8,7 @@ import SearchBar from "./elements/SearchBar";
 const HomePage = () => {
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const [isGamesOpen, setIsGamesOpen] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null); // Add this line
+  const [selectedGame, setSelectedGame] = useState(null); 
 
   const handleStartButtonClick = () => {
     setStartMenuOpen(!startMenuOpen);

@@ -1,7 +1,7 @@
 /* Pagination.module.css */
 .pagination {
     display: inline-block;
-    position: absolute;
+    position: fixed;
     bottom: 40px; /* height of the taskbar */
     left: 0;
     right: 0;

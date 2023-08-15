@@ -25,7 +25,7 @@ export const getVideogameByName = (name) => {
             const videogameByName = videogameByNameData.data;
             dispatch({ type: GET_VIDEOGAME_BY_NAME, payload: videogameByName });
         } catch (error) {
-            return error.message
+            throw new Error(error.message);
         }
     };
 };
