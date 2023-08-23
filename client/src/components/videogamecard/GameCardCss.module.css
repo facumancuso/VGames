@@ -1,0 +1,62 @@
+
+.containerCard {
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+    width: 470px;
+    text-align: center;
+    margin: 20px ;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgba(37, 1, 83, 0.897), rgba(31, 3, 97, 0.726)),
+      url("../../imagenes/cyberpunk-ponpon.gif")
+        center no-repeat;
+        color: var(--glow-color);
+        font-size: 13px;
+        font-weight: bold;
+    image-resolution: 100%;
+    background-size: 179%;
+    border: .15em solid var(--glow-color);
+    border-radius: 30px;
+    outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  transition: all 0.3s;
+  }
+  .containerCard:hover {
+    transform: scale(1.1);
+    border: 2px double rgb(221, 215, 212);
+    transition: all 2s, ease;
+  }
+
+
+  
+  .imageDiv  {
+     width: 100%;
+     position: relative;
+  }
+  .textDiv {
+     padding: auto;
+  }
+
+  .text {
+    text-decoration: none ;
+    color: white;
+    padding: 20px;
+    border: blink;
+    text-shadow: 2px 2px .6em rgb(240, 248, 255);
+  }
+
+  .image {
+    width: 80%;
+    border: 2px  outset rgb(173, 216, 230);
+    padding: 0px;
+    border-radius: 20px;
+    margin: 10px 0;
+    object-fit: cover;
+    height: 200px;
+  }

@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.landingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+    width:15%;
+    padding: 10%;
+    left: 550px;
+    cursor: pointer;
+    outline: none;
+    background: 
+    url("../../imagenes/start.gif")
+      center no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+
+  }
+  .button:hover {
+    transform: translate(-0.01em, -0.04em);
+    
+   }
+
+   .giticon, .linkicon {
+  position: absolute;
+  top:-100px ;
+  left: 650px;
+  
+ }
+
+
+  .text {
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+    text-align: center;
+    justify-content: center;
+    padding: 30px 30px 30px 28px;
+    font-size: 50px;
+    font-weight: bold;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+    color: var(--glow-color);
+    text-decoration: none;
+
+   
+  text-shadow:
+   1px 2px 0px #a9a0aa,
+    1px 2px 0px #a89fa7,
+    1px 2px 51px #d6d0d0,
+    2px 3px 1px #c7bfbf,
+    2px 3px 2px #040203,
+    2px 4px 52px #87ceeb,
+    3px 5px 2px #87ceeb,
+    3px 5px 3px #87ceeb,
+    3px 5px 3px #87ceeb,
+    5px 6px 2px #87ceeb,
+    6px 6px 2px #050505,
+    7px 6px 2px #000000,
+    7px 7px 1px #696363,
+    7px 7px 1px #080808,
+    7px 7px 0px #201f20,
+    7px 8px 0px #757172; 
+    
+  }
+  .text:hover {
+    transform: translate(-0.05em, -0.05em);
+    
+   }
+   
+
+  @media only screen and (max-width: 1000px) {
+    .giticon{
+      position: absolute;
+      
+      height: 5%;
+      width: 4.6%;
+      margin-left: 270px;
+      margin-bottom: 5px;
+      margin-top: 500px;
+      
+     }
+    
+     .linkicon{
+      position: absolute;
+     
+      height: 4.8%;
+      width: 4.7%;
+      margin-left: -305px;
+      margin-bottom: 5px;
+      margin-top: 500px;
+      
+     }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .giticon{
+      position: absolute;
+      
+      height: 5%;
+      width: 4.6%;
+      margin-left: 55px;
+      margin-bottom: 5px;
+      margin-top: 100px;
+      
+     }
+    
+     .linkicon{
+      position: absolute;
+     
+      height: 4.8%;
+      width: 4.7%;
+      margin-left: -55px;
+      margin-bottom: 5px;
+      margin-top: 100px;
+      
+     }
+  }
+  @media only screen and (max-height: 1200px) {
+    .giticon{
+      position: absolute;
+      
+      height: 5%;
+      width: 4.6%;
+      margin-left: 50px;
+      margin-bottom: 5px;
+      margin-top: 800px;
+      
+     }
+    
+     .linkicon{
+      position: absolute;
+     
+      height: 4.8%;
+      width: 4.7%;
+      margin-left: -105px;
+      margin-bottom: 5px;
+      margin-top: 800px;
+      
+     }
+     .buttonDiv {
+      display: flex;
+      justify-content: center;
+      margin:  330px 0px 0px 0px;
+  }
+  .button {
+      padding: 100px;
+      margin: 100px;
+      
+      cursor: pointer;
+      outline: none;
+      background: 
+      url("../../imagenes/start.gif")
+        center no-repeat;
+      background-size: contain;
+      background-position: start;
+      display: inline-flex;
+      position: center;
+  
+    }
+  }
+
+  @media only screen and (max-height: 950px) {
+    .giticon{
+      position: absolute;
+      
+      height: 5%;
+      width: 4.6%;
+      margin-left: 50px;
+      margin-bottom: 5px;
+      margin-top: 580px;
+      
+     }
+    
+     .linkicon{
+      position: absolute;
+     
+      height: 4.8%;
+      width: 4.7%;
+      margin-left: -105px;
+      margin-bottom: 5px;
+      margin-top: 580px;
+      
+     }
+     .buttonDiv {
+      display: flex;
+      justify-content: center;
+      margin:  330px 0px 0px 0px;
+  }
+  .button {
+      padding: 100px;
+      margin: -100px;
+      
+      cursor: pointer;
+      outline: none;
+      background: 
+      url("../../imagenes/start.gif")
+        center no-repeat;
+      background-size: contain;
+      background-position: start;
+      display: inline-flex;
+      position: center;
+  
+    }
+  }

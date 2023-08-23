@@ -1,0 +1,47 @@
+.filters {
+  color: rgb(70, 130, 180);
+}
+
+.underline {
+  border-bottom: 1px solid white;
+  text-align: center;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+.options option {
+  --glow-color: rgb(173, 216, 230);
+  background: rgb(70, 130, 180);
+  color: var(--glow-color);
+}
+.options {
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+  width: 15%;
+  border: 0.25em solid var(--glow-color);
+  background: linear-gradient(rgba(173, 216, 230, 0.555), rgba(70, 130, 180, 0.8));
+  color: var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  box-shadow: 0 0 1em 0.25em rgb(173, 216, 230),
+    0 0 4em 1em rgba(135, 206, 235, 0.568),
+    inset 0 0 0.75em 0.25em rgb(173, 216, 230);
+  text-decoration: none;
+  transition: all 0.4s;
+  border-radius: 1em;
+  outline: none;
+}
+
+.options:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.options:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+.aligns {
+  margin-top: 1em;
+}

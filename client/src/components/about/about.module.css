@@ -1,0 +1,148 @@
+.divContainer {
+  width: 96%;
+  display: flex;
+  background-color: white;
+  margin: 2%;
+  padding: 0px 0px 0px 0px;
+  background: linear-gradient(
+    rgba(173, 216, 230, 0.555),
+    rgba(70, 130, 180, 0.8)
+  );
+}
+
+.container {
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  display: flex;
+  position: relative;
+  left: 500px;
+  top: -290px;
+  background: linear-gradient(
+    rgba(173, 216, 230, 0.555),
+    rgba(70, 130, 180, 0.8)
+  );
+  width: 600px;
+  height: 600px;
+  text-align: start;
+  line-height: 35px;
+  color: #fffeff;
+  text-shadow: 1px 2px 0px #a9a0aa, 1px 2px 0px #a89fa7, 1px 2px 51px #d6d0d0,
+    2px 3px 1px #c7bfbf, 2px 3px 2px #040203, 2px 4px 52px #87ceeb,
+    3px 5px 2px #87ceeb, 3px 5px 3px #87ceeb, 3px 5px 3px #87ceeb,
+    5px 6px 2px #87ceeb, 6px 6px 2px #050505, 7px 6px 2px #000000,
+    7px 7px 1px #696363, 7px 7px 1px #080808, 7px 7px 0px #201f20,
+    7px 8px 0px #757172;
+}
+.containerButton {
+  position: relative;
+  top: -650px;
+  left: 500px;
+}
+
+.lista {
+  padding: 35px 5px 0px 15px;
+}
+
+.containerDescrip {
+  padding: 20px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 45px;
+}
+.title {
+  position: relative;
+  left: 300px;
+  padding: 30px;
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  outline: none;
+  transition: all 0.3s;
+  color: var(--glow-color);
+  text-decoration: none;
+  text-shadow: 1px 2px 0px #a9a0aa, 1px 2px 0px #a89fa7, 1px 2px 51px #d6d0d0,
+    2px 3px 1px #c7bfbf, 2px 3px 2px #040203, 2px 4px 52px #87ceeb,
+    3px 5px 2px #87ceeb, 3px 5px 3px #87ceeb, 3px 5px 3px #87ceeb,
+    5px 6px 2px #87ceeb, 6px 6px 2px #050505, 7px 6px 2px #000000,
+    7px 7px 1px #696363, 7px 7px 1px #080808, 7px 7px 0px #201f20,
+    7px 8px 0px #757172;
+}
+
+.imgDiv {
+  position: relative;
+  left: 60px;
+  top: 80px;
+  display: flex;
+  width: 400px;
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+
+  box-shadow: 0 0 1em 0.2em var(--glow-color),
+    0 0 1em 1em var(--glow-spread-color),
+    inset 0 0 0.24em 0.17em var(--glow-color);
+}
+
+.detailButton {
+  --glow-color: rgb(173, 216, 230);
+  --glow-spread-color: rgba(135, 206, 235, 0.568);
+  --enhanced-glow-color: rgba(240, 248, 255, 0.651);
+  --btn-color: rgb(70, 130, 180);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 12px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  top: -300px;
+  right: 37%;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.detailButton::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.detailButton:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.detailButton:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
