@@ -14,7 +14,7 @@ export const DELETE_GAME = "DELETE_GAME";
 export const getVideogamesName = (name) => async (dispatch) => {
   try {
     const response = await axios.get(`/videogames?name=${name}`);
-    dispatch({ type: VIDEO_GAMES_NAME, payload: response.data }); // Dispatch the action directly
+    dispatch({ type: VIDEO_GAMES_NAME, payload: response.data }); 
   } catch (error) {
     return error;
   }

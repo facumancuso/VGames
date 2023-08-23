@@ -3,14 +3,9 @@ const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 const axios = require("axios");
 
-//apigameinfo trae 5 pag concatenadas de info sobre juegos
-//dbGamesinfo trae los juegos dentro de nuestra base de datos
-//gamesInfo concatena apigameinfo y dbgameinfo
-//listGames mapea toda la info dentro de GamesInfo y devuelve sus propiedades en un objeto
 const getGames = async (name = "") => {
   try {
-    const pageLimit = 20; // Number of games per page
-    const totalPages = 5; // Total number of pages
+
 
     const promises = [];
 
@@ -34,7 +29,7 @@ const getGames = async (name = "") => {
       rating: game.rating,
       platforms: game.platforms.map((platform) => platform.platform.name),
       genres: game.genres.map((genre) => genre.name),
-      createdInDb: false, // Since this is an API game
+      createdInDb: false,
     }));
 
     const dbGamesInfo = await Videogame.findAll({

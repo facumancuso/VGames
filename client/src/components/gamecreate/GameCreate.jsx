@@ -78,7 +78,6 @@ const GameCreate = () => {
             const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    // dispatch(getVideogames());
     dispatch(getByGenres()).then(() =>setCarga(false));
     dispatch(getPlatform());
   }, [dispatch]);

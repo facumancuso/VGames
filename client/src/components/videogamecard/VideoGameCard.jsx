@@ -3,9 +3,6 @@ import s from "../videogamecard/GameCardCss.module.css";
 
 export const VideoGameCard = ({name, image, genres, released, platforms, id, createdInDb, rating }) => {
 
-
-    
-
     return (
         <div id={id} key={id} className={s.containerDiv}>
             <div id={id} key={id} className={ s.containerCard}  >
